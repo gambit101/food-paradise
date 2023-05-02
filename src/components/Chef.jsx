@@ -13,8 +13,8 @@ const Chef = () => {
 
     return (
         <div>
-            <h1 className='text-warning text-center mt-5'>our chefs</h1>
-            <div>
+            <h1 className='text-warning text-center mt-5'>Our chefs</h1>
+            <div className='mt-5 container text-center mx-auto row row-cols-lg-3'>
                 {
                     chefs.map(chef => <p key={chef.id}>
                         

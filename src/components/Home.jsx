@@ -16,14 +16,16 @@ const Home = () => {
                         Where every flavor tells a story.
                     </Card.Text>
                     <Card.Text className='ms-auto text-white fs-3 w-50 mt-5'>“If more of us valued food and cheer and song above hoarded gold, it would be a merrier world.Ask not what you can do for your country. Ask what’s for lunch.”</Card.Text>
-                    <Link to='/register'>
-                        <button type="button" class="ms-auto btn btn-secondary fw-bold">Register Now</button>
-                    </Link>
+                    <div className='w-50 ms-auto'>
+                        <Link to='/register'>
+                            <button type="button" class="ms-auto btn btn-warning fw-bold">Register Now</button>
+                        </Link>
+                    </div>
                 </Card.ImgOverlay>
             </Card>
 
             <Chef>
-            
+
             </Chef>
 
             <Story></Story>
