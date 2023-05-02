@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Chef = () => {
     const [chefs, setChefs] = useState([]);
@@ -17,20 +18,22 @@ const Chef = () => {
             <div className='mt-5 container text-center mx-auto row row-cols-lg-3'>
                 {
                     chefs.map(chef => <p key={chef.id}>
-                        
-                            <Card className='col col-lg-3' style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={chef.chef_picture} />
-                                <Card.Body>
-                                    <Card.Title className='fw-bold'>{chef.chef_name}</Card.Title>
-                                    <Card.Text>
-                                        {chef.experience}
-                                    </Card.Text>
-                                    <p><span className='fw-bold'>Likes: </span>{chef.likes}</p>
-                                    <p><span className='fw-bold'>Recipes: </span>{chef.recipes}</p>
+
+                        <Card className='col col-lg-3' style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={chef.chef_picture} />
+                            <Card.Body>
+                                <Card.Title className='fw-bold'>{chef.chef_name}</Card.Title>
+                                <Card.Text>
+                                    {chef.experience}
+                                </Card.Text>
+                                <p><span className='fw-bold'>Likes: </span>{chef.likes}</p>
+                                <p><span className='fw-bold'>Recipes: </span>{chef.recipes}</p>
+                                <Link to={`/foods/${chef.id}`}>
                                     <Button variant="primary">View Recipes</Button>
-                                </Card.Body>
-                            </Card>
-                        
+                                </Link>
+                            </Card.Body>
+                        </Card>
+
                     </p>)
                 }
             </div>

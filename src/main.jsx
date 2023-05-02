@@ -9,6 +9,8 @@ import Blog from './components/Blog.jsx';
 import Login from './components/Login.jsx';
 import Register from './components/Register.jsx';
 import Chef from './components/Chef.jsx';
+import Foods from './components/Foods.jsx';
+import FoodsLayout from './components/FoodsLayout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +36,19 @@ const router = createBrowserRouter([
       {
         path: '/chef',
         element: <Chef></Chef>
-      }
+      },
+      
+    ]
+  },
+  {
+    path: 'foods',
+    element: <FoodsLayout></FoodsLayout>,
+    children: [
+      {
+        path: ':id',
+        element: <Foods></Foods>,
+        loader: ({params}) => fetch(`http://localhost:5000/food/${params.id}`)
+      },
     ]
   }
 ])
