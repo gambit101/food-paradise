@@ -11,11 +11,13 @@ import Register from './components/Register.jsx';
 import Chef from './components/Chef.jsx';
 import Foods from './components/Foods.jsx';
 import FoodsLayout from './components/FoodsLayout.jsx';
+import ErrorPage from './components/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',

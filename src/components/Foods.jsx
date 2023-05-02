@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams} from 'react-router-dom';
 
+
 const Foods = () => {
 
     // const {id} = useParams();
@@ -32,8 +33,8 @@ const Foods = () => {
             <h1 className='text-center text-warning mt-5'>{foods.chef_name} recipes</h1>
             <hr className='text-white'/>
 
-            <div className='d-flex container gap-3 mt-5'>
-                <div>
+            <div className='d-flex container gap-3 mt-5 h-25'>
+                <div  style={{height: '400px'}}>
                     <img className=' h-75 rounded' style={{width: '400px'}} src={foods.r1_img} alt="" />
                 </div>
 
@@ -47,13 +48,13 @@ const Foods = () => {
                     <p className='text-white'>
                         Recipe: {foods.recipe1}
                     </p>
-                    <button className='btn-warning'>Favorite</button>
+                    <button type="button" class="ms-auto btn btn-warning fw-bold">Favorite</button>
                 </div>
 
             </div>
-            <div className='d-flex container gap-3'>
+            <div className='d-flex container gap-3 mt-4 '>
                 <div>
-                    <img className=' h-75 rounded' style={{width: '400px'}} src={foods.r1_img} alt="" />
+                    <img className=' h-75 rounded' style={{width: '400px'}} src={foods.r2_img} alt="" />
                 </div>
 
                 <div>
@@ -66,13 +67,13 @@ const Foods = () => {
                     <p className='text-white'>
                         Recipe: {foods.recipe2}
                     </p>
-                    <button className='btn-warning'>Favorite</button>
+                    <button type="button" class="ms-auto btn btn-warning fw-bold">Favorite</button>
                 </div>
 
             </div>
-            <div className='d-flex container gap-3'>
+            <div className='d-flex container gap-3 mt-4 h-25'>
                 <div>
-                    <img className=' h-75 rounded' style={{width: '400px'}} src={foods.r1_img} alt="" />
+                    <img className=' h-75 rounded' style={{width: '400px'}} src={foods.r3_img} alt="" />
                 </div>
 
                 <div>
@@ -85,7 +86,7 @@ const Foods = () => {
                     <p className='text-white'>
                         Recipe: {foods.recipe3}
                     </p>
-                    <button className='btn-warning'>Favorite</button>
+                    <button type="button" class="ms-auto btn btn-warning fw-bold">Favorite</button>
                 </div>
 
             </div>
