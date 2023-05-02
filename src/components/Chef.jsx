@@ -27,7 +27,7 @@ const Chef = () => {
                                     {chef.experience}
                                 </Card.Text>
                                 <p><span className='fw-bold'>Likes: </span>{chef.likes}</p>
-                                <p><span className='fw-bold'>Recipes: </span>{chef.recipes}</p>
+                                <p><span className='fw-bold'>Recipes: </span>{chef.recipeName}</p>
                                 <Link to={`/foods/${chef.id}`}>
                                     <Button variant="primary">View Recipes</Button>
                                 </Link>
