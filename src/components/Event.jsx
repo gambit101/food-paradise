@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Event = () => {
+    useEffect(()=>{
+        AOS.init({duration: 2000})
+    },[])
     return (
         <div className='container mt-5'>
             <div>
                 <h2 className='text-center text-warning'>Upcoming Events</h2>
             </div>
-            <div className='mt-4'>
+            <div className='mt-4' data-aos='zoom-in'>
                 <CardGroup>
                     <Card>
                         <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2017/08/10/05/44/pizza-2618726_960_720.jpg" />

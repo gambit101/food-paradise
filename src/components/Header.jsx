@@ -18,12 +18,13 @@ const Header = () => {
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home"><span className='text-warning fs-3 fw-bold'>Food Paradise</span></Navbar.Brand>
-                    <Nav className="ms-auto">
-                        <Link to='/' className='text-decoration-none text-white ms-3'   href="#home">Home</Link>
-                        <Link to='/blog' className='text-decoration-none text-white ms-3' href="#features">Blog</Link>
-                        <Link to='/login' className='text-decoration-none text-white ms-3'  href="#pricing">Login</Link>
-                        {user && <span className='text-white ms-3 '><img  style={{height: '30px'}} className='rounded-5' src={user?.photoURL} alt="" /><button className='ms-3 bg-warning fw-bold p-1 rounded border-0 text-white' onClick={handleLogOut}>Log Out</button></span>}
+                    <Nav className="mx-auto">
+                        <Link to='/' className='text-decoration-none text-white fw-bold'   href="#home">Home</Link>
+                        <Link to='/blog' className='text-decoration-none text-white ms-3 fw-bold' href="#features">Blog</Link>
+                        <Link to='/login' className='text-decoration-none text-white ms-3 fw-bold'  href="#pricing">Login</Link>
+                        
                     </Nav>
+                    {user && <span className='text-white ms-3 '><img  style={{height: '30px'}} className='rounded-5' src={user?.photoURL} alt="" /><button className='ms-3 bg-warning fw-bold p-1 rounded border-0 text-white' onClick={handleLogOut}>Log Out</button></span>}
                 </Container>
             </Navbar>
         </div>

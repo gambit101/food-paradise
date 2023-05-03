@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { Button, Toast } from 'react-bootstrap';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Foods = () => {
     const [showToast, setShowToast] = useState(false);
@@ -9,6 +11,10 @@ const Foods = () => {
     const [disableButton, setDisableButton] = useState(false);
     const [disableButton2, setDisableButton2] = useState(false);
     const [disableButton3, setDisableButton3] = useState(false);
+
+    useEffect(()=>{
+        AOS.init({duration: 2000})
+    },[])
 
     // const {id} = useParams();
 
@@ -21,7 +27,7 @@ const Foods = () => {
 
     return (
         <div>
-            <div className='d-flex container gap-3 mt-5'>
+            <div className='d-flex container gap-3 mt-5' data-aos='fade-up' >
                 <div>
                     <img style={{ width: '500px' }} className='rounded' src={foods.chef_picture} alt="" />
                 </div>
@@ -39,7 +45,7 @@ const Foods = () => {
             <h1 className='text-center text-warning mt-5'>{foods.chef_name} recipes</h1>
             <hr className='text-white' />
 
-            <div className='d-flex container gap-3 mt-3 bg-secondary p-3 rounded'>
+            <div className='d-flex container gap-3 mt-3 bg-secondary p-3 rounded'data-aos='fade-down'>
                 <div>
                     <img className=' h-100 rounded' style={{ width: '400px' }} src={foods.r1_img} alt="" />
                 </div>
@@ -72,7 +78,7 @@ const Foods = () => {
                 </div>
 
             </div>
-            <div className='d-flex container gap-3 mt-4 bg-secondary p-3 rounded '>
+            <div className='d-flex container gap-3 mt-4 bg-secondary p-3 rounded'data-aos='fade-right'>
                 <div>
                     <img className=' h-100 rounded' style={{ width: '400px' }} src={foods.r2_img} alt="" />
                 </div>
@@ -105,7 +111,7 @@ const Foods = () => {
                 </div>
 
             </div>
-            <div className='d-flex container gap-3 mt-4 h-25 bg-secondary p-3 rounded'>
+            <div className='d-flex container gap-3 mt-4 h-25 bg-secondary p-3 rounded' data-aos='fade-left'>
                 <div>
                     <img className=' h-100 rounded' style={{ width: '400px' }} src={foods.r3_img} alt="" />
                 </div>
