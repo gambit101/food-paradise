@@ -37,7 +37,7 @@ const Foods = () => {
                     <h5 className='text-warning mt-3'>Experience: {foods.experience}</h5>
                     <h5 className='text-white mt-3'>3 special recipes</h5>
                     <h5 className='text-white mt-3'><FaRegThumbsUp className='me-1'></FaRegThumbsUp> Likes: {foods.likes}</h5>
-                    <h5 className='text-white mt-3'>Details: {foods.description}</h5>
+                    <h5 className='text-white mt-3'><span className='text-warning'>Details:</span> {foods.description}</h5>
                 </div>
             </div>
 
