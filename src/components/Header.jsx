@@ -2,15 +2,16 @@ import React, { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './providers/AuthProvider';
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
 
-    const {user, logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         logOut()
-        .then(result =>{})
-        .catch(error =>{console.error(error)})
+            .then(result => { })
+            .catch(error => { console.error(error) })
     }
 
     return (
@@ -18,13 +19,25 @@ const Header = () => {
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home"><span className='text-warning fs-3 fw-bold'>Food Paradise</span></Navbar.Brand>
-                    <Nav className="mx-auto">
-                        <Link to='/' className='text-decoration-none text-white fw-bold'   href="#home">Home</Link>
-                        <Link to='/blog' className='text-decoration-none text-white ms-3 fw-bold' href="#features">Blog</Link>
-                        <Link to='/login' className='text-decoration-none text-white ms-3 fw-bold'  href="#pricing">Login</Link>
-                        
+                    <Nav className="ms-auto">
+
+                        <NavLink to='/' style={{ fontWeight: 'bold' }} className={({ isActive, isPending }) =>
+                            isPending ? "" : isActive ? "text-warning text-decoration-none" : "text-white text-decoration-none"
+                        } href="#home">Home</NavLink>
+
+                        <div className='ms-4'>
+                            <NavLink to='/blog' style={{ fontWeight: 'bold' }} className={({ isActive, isPending }) =>
+                                isPending ? "" : isActive ? "text-warning text-decoration-none" : "text-white text-decoration-none"
+                            } href="#home">Blog</NavLink>
+                        </div>
+                        <div className='ms-4'>
+                        {user ? <span className='text-white ms-3 '><img style={{ height: '32px' }} className='rounded-5' src={user?.photoURL} alt="" /><button className='ms-3 bg-warning fw-bold p-1 rounded border-0 text-black' onClick={handleLogOut}>Log Out</button></span> : <NavLink to='/login' style={{ fontWeight: 'bold' }} className={({ isActive, isPending }) =>
+                                isPending ? "" : isActive ? "text-warning text-decoration-none" : "text-white text-decoration-none"
+                            } href="#home">Login</NavLink>}
+
+                        </div>
                     </Nav>
-                    {user && <span className='text-white ms-3 '><img  style={{height: '30px'}} className='rounded-5' src={user?.photoURL} alt="" /><button className='ms-3 bg-warning fw-bold p-1 rounded border-0 text-white' onClick={handleLogOut}>Log Out</button></span>}
+
                 </Container>
             </Navbar>
         </div>

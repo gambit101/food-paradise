@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { Button, Toast } from 'react-bootstrap';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { FaStar, FaStarHalf, FaRegThumbsUp } from "react-icons/fa";
 
 const Foods = () => {
     const [showToast, setShowToast] = useState(false);
@@ -12,9 +13,9 @@ const Foods = () => {
     const [disableButton2, setDisableButton2] = useState(false);
     const [disableButton3, setDisableButton3] = useState(false);
 
-    useEffect(()=>{
-        AOS.init({duration: 2000})
-    },[])
+    useEffect(() => {
+        AOS.init({ duration: 2000 })
+    }, [])
 
     // const {id} = useParams();
 
@@ -33,10 +34,10 @@ const Foods = () => {
                 </div>
                 <div>
                     <h2 className='text-warning fw-bold'>{foods.chef_name}</h2>
-                    <h5 className='text-warning'>Experience: {foods.experience}</h5>
-                    <h5 className='text-white'>3recipes</h5>
-                    <h5 className='text-white'>Likes: {foods.likes}</h5>
-                    <h5 className='text-white'>Details: {foods.description}</h5>
+                    <h5 className='text-warning mt-3'>Experience: {foods.experience}</h5>
+                    <h5 className='text-white mt-3'>3 special recipes</h5>
+                    <h5 className='text-white mt-3'><FaRegThumbsUp className='me-1'></FaRegThumbsUp> Likes: {foods.likes}</h5>
+                    <h5 className='text-white mt-3'>Details: {foods.description}</h5>
                 </div>
             </div>
 
@@ -45,7 +46,7 @@ const Foods = () => {
             <h1 className='text-center text-warning mt-5'>{foods.chef_name} recipes</h1>
             <hr className='text-white' />
 
-            <div className='d-flex container gap-3 mt-3 bg-secondary p-3 rounded'data-aos='fade-down'>
+            <div className='d-flex container gap-3 mt-3 bg-secondary p-3 rounded' data-aos='fade-down'>
                 <div>
                     <img className=' h-100 rounded' style={{ width: '400px' }} src={foods.r1_img} alt="" />
                 </div>
@@ -64,10 +65,11 @@ const Foods = () => {
                         setShowToast(true);
                         setDisableButton(true);
                     }} disabled={disableButton}>Favorite</Button>
+                    <h5 className='text-warning mt-2'>Rating: <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar></h5>
                     <div>
-                        <Toast className='w-50 ms-auto'  show={showToast} onClose={() => {
+                        <Toast className='w-50 ms-auto' show={showToast} onClose={() => {
                             setShowToast(false);
-                            
+
                         }}>
                             <Toast.Header>
                                 <strong className="ms-auto">{foods.recipe1Name}</strong>
@@ -78,7 +80,7 @@ const Foods = () => {
                 </div>
 
             </div>
-            <div className='d-flex container gap-3 mt-4 bg-secondary p-3 rounded'data-aos='fade-right'>
+            <div className='d-flex container gap-3 mt-4 bg-secondary p-3 rounded' data-aos='fade-right'>
                 <div>
                     <img className=' h-100 rounded' style={{ width: '400px' }} src={foods.r2_img} alt="" />
                 </div>
@@ -97,10 +99,11 @@ const Foods = () => {
                         setSecondToast(true);
                         setDisableButton2(true);
                     }} disabled={disableButton2}>Favorite</Button>
+                    <h5 className='text-warning mt-2'>Rating: <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> <FaStarHalf></FaStarHalf></h5>
                     <div>
-                        <Toast className='w-50 ms-auto'  show={secondToast} onClose={() => {
+                        <Toast className='w-50 ms-auto' show={secondToast} onClose={() => {
                             setSecondToast(false);
-                            
+
                         }}>
                             <Toast.Header>
                                 <strong className="ms-auto">{foods.recipe2Name}</strong>
@@ -130,10 +133,11 @@ const Foods = () => {
                         setThirdToast(true);
                         setDisableButton3(true);
                     }} disabled={disableButton3}>Favorite</Button>
+                    <h5 className='text-warning mt-2'>Rating: <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> <FaStarHalf></FaStarHalf></h5>
                     <div>
-                        <Toast className='w-50 ms-auto'  show={thirdToast} onClose={() => {
+                        <Toast className='w-50 ms-auto' show={thirdToast} onClose={() => {
                             setThirdToast(false);
-                            
+
                         }}>
                             <Toast.Header>
                                 <strong className="ms-auto">{foods.recipe3Name}</strong>
