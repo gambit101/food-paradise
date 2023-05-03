@@ -22,7 +22,7 @@ const Header = () => {
                         <Link to='/' className='text-decoration-none text-white ms-3'   href="#home">Home</Link>
                         <Link to='/blog' className='text-decoration-none text-white ms-3' href="#features">Blog</Link>
                         <Link to='/login' className='text-decoration-none text-white ms-3'  href="#pricing">Login</Link>
-                        {user && <span className='text-white ms-3'>{user.photoURL}<button className='ms-3 bg-warning fw-bold p-1 rounded border-0' onClick={handleLogOut}>Sign Out</button></span>}
+                        {user && <span className='text-white ms-3 '><img  style={{height: '30px'}} className='rounded-5' src={user?.photoURL} alt="" /><button className='ms-3 bg-warning fw-bold p-1 rounded border-0 text-white' onClick={handleLogOut}>Log Out</button></span>}
                     </Nav>
                 </Container>
             </Navbar>

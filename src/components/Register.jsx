@@ -48,16 +48,20 @@ const Register = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className='text-warning'>Email address</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter email" />
+                    <Form.Control type="email" name='email' placeholder="Enter email" required/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='text-warning'>Password</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Password" />
+                    <Form.Control type="password" name='password' placeholder="Password" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='text-warning'>Confirm Password</Form.Label>
-                    <Form.Control type="password" name='confirm' placeholder="Password" />
+                    <Form.Control type="password" name='confirm' placeholder="Password" required/>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicText">
+                    <Form.Label className='text-warning'>photoURL</Form.Label>
+                    <Form.Control type="text" placeholder="photoURL" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check className='text-warning' type="checkbox" label="Check me out" />
