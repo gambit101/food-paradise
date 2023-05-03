@@ -12,6 +12,7 @@ import Chef from './components/Chef.jsx';
 import Foods from './components/Foods.jsx';
 import FoodsLayout from './components/FoodsLayout.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
+import AuthProvider from './components/providers/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
         path: '/chef',
         element: <Chef></Chef>
       },
-      
+
     ]
   },
   {
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: ':id',
         element: <Foods></Foods>,
-        loader: ({params}) => fetch(`http://localhost:5000/food/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`)
       },
     ]
   }
@@ -57,6 +58,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )

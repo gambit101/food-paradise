@@ -39,9 +39,9 @@ const Foods = () => {
             <h1 className='text-center text-warning mt-5'>{foods.chef_name} recipes</h1>
             <hr className='text-white' />
 
-            <div className='d-flex container gap-3 mt-5 h-25'>
-                <div style={{ height: '400px' }}>
-                    <img className=' h-75 rounded' style={{ width: '400px' }} src={foods.r1_img} alt="" />
+            <div className='d-flex container gap-3 mt-3 bg-secondary p-3 rounded'>
+                <div>
+                    <img className=' h-100 rounded' style={{ width: '400px' }} src={foods.r1_img} alt="" />
                 </div>
 
                 <div>
@@ -54,7 +54,7 @@ const Foods = () => {
                     <p className='text-white'>
                         Recipe: {foods.recipe1}
                     </p>
-                    <Button onClick={() => {
+                    <Button className='bg-warning border-0 text-black fw-bold' onClick={() => {
                         setShowToast(true);
                         setDisableButton(true);
                     }} disabled={disableButton}>Favorite</Button>
@@ -72,9 +72,9 @@ const Foods = () => {
                 </div>
 
             </div>
-            <div className='d-flex container gap-3 mt-4 '>
+            <div className='d-flex container gap-3 mt-4 bg-secondary p-3 rounded '>
                 <div>
-                    <img className=' h-75 rounded' style={{ width: '400px' }} src={foods.r2_img} alt="" />
+                    <img className=' h-100 rounded' style={{ width: '400px' }} src={foods.r2_img} alt="" />
                 </div>
 
                 <div>
@@ -87,7 +87,7 @@ const Foods = () => {
                     <p className='text-white'>
                         Recipe: {foods.recipe2}
                     </p>
-                    <Button onClick={() => {
+                    <Button className='bg-warning border-0 text-black fw-bold' onClick={() => {
                         setSecondToast(true);
                         setDisableButton2(true);
                     }} disabled={disableButton2}>Favorite</Button>
@@ -105,9 +105,9 @@ const Foods = () => {
                 </div>
 
             </div>
-            <div className='d-flex container gap-3 mt-4 h-25'>
+            <div className='d-flex container gap-3 mt-4 h-25 bg-secondary p-3 rounded'>
                 <div>
-                    <img className=' h-75 rounded' style={{ width: '400px' }} src={foods.r3_img} alt="" />
+                    <img className=' h-100 rounded' style={{ width: '400px' }} src={foods.r3_img} alt="" />
                 </div>
 
                 <div>
@@ -120,7 +120,7 @@ const Foods = () => {
                     <p className='text-white'>
                         Recipe: {foods.recipe3}
                     </p>
-                    <Button onClick={() => {
+                    <Button className='bg-warning border-0 text-black fw-bold' onClick={() => {
                         setThirdToast(true);
                         setDisableButton3(true);
                     }} disabled={disableButton3}>Favorite</Button>

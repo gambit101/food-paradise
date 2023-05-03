@@ -8,7 +8,7 @@ import Event from './Event';
 const Home = () => {
     return (
         <div>
-            <Card className="text-white">
+            <Card className="text-white border-0">
                 <Card.Img className='' style={{ height: '700px' }} src="https://cdn.pixabay.com/photo/2020/03/25/21/05/pizza-4968645_960_720.jpg" alt="Card image" />
                 <Card.ImgOverlay>
                     <Card.Title className='ms-auto w-50 text-warning fs-2 mt-5'>Welcome to Food Paradise</Card.Title>

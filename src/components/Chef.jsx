@@ -19,7 +19,7 @@ const Chef = () => {
                 {
                     chefs.map(chef => <p key={chef.id}>
 
-                        <Card className='col col-lg-3' style={{ width: '18rem' }}>
+                        <Card className='col col-lg-3 h-100' style={{ width: '22rem' }}>
                             <Card.Img variant="top" src={chef.chef_picture} />
                             <Card.Body>
                                 <Card.Title className='fw-bold'>{chef.chef_name}</Card.Title>
