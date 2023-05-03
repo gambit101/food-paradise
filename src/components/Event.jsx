@@ -21,7 +21,7 @@ const Event = () => {
 
                     </Card>
                     <Card className='ms-2'>
-                        <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2021/07/19/16/04/pizza-6478478_960_720.jpg" />
+                        <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2017/09/30/15/10/plate-2802332_960_720.jpg" />
                         <Card.Body>
                             <Card.Title className='fw-bold'>Pizza House Hollyday Sale</Card.Title>
                             <Card.Text>

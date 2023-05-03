@@ -5,7 +5,7 @@ import { AuthContext } from './providers/AuthProvider';
 
 const Register = () => {
     const [error, setError] = useState('');
-    const {createUser} = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext)
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -40,46 +40,54 @@ const Register = () => {
     }
 
     return (
-        <div className='mt-5'>
-            <Form onSubmit={handleSignUp} className='w-50 ms-5'>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className='text-warning'>Name</Form.Label>
-                    <Form.Control type="text" name='name' placeholder="Enter name" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className='text-warning'>Email address</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter email" required/>
-                </Form.Group>
+        <div className='d-flex'>
+            <div className='w-50'>
+                <div className=' mt-5'>
+                    <Form onSubmit={handleSignUp} className=' ms-5'>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label className='text-warning'>Name</Form.Label>
+                            <Form.Control type="text" name='name' placeholder="Enter name" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label className='text-warning'>Email address</Form.Label>
+                            <Form.Control type="email" name='email' placeholder="Enter email" required />
+                        </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label className='text-warning'>Password</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Password" required/>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label className='text-warning'>Confirm Password</Form.Label>
-                    <Form.Control type="password" name='confirm' placeholder="Password" required/>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicText">
-                    <Form.Label className='text-warning'>photoURL</Form.Label>
-                    <Form.Control type="text" placeholder="photoURL" required/>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check className='text-warning' type="checkbox" label="Check me out" />
-                </Form.Group>
-                <p className='text-danger'>{error}</p>
-                <Button variant="warning" type="submit">
-                    Submit
-                </Button>
-                <br />
-                {/* <Button className='mt-3' variant="warning" type="submit"><FaGoogle></FaGoogle> Login With Google
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label className='text-warning'>Password</Form.Label>
+                            <Form.Control type="password" name='password' placeholder="Password" required />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label className='text-warning'>Confirm Password</Form.Label>
+                            <Form.Control type="password" name='confirm' placeholder="Password" required />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicText">
+                            <Form.Label className='text-warning'>photoURL</Form.Label>
+                            <Form.Control type="text" placeholder="photoURL" required />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                            <Form.Check className='text-warning' type="checkbox" label="Check me out" />
+                        </Form.Group>
+                        <p className='text-danger'>{error}</p>
+                        <Button variant="warning" type="submit">
+                            Submit
+                        </Button>
+                        <br />
+                        {/* <Button className='mt-3' variant="warning" type="submit"><FaGoogle></FaGoogle> Login With Google
                 </Button>
                 <br />
                 <Button className='mt-3' variant="warning" type="submit"><FaGithub></FaGithub> Login With Github
                 </Button> */}
 
-                {/* <p className='text-warning mt-3'>Don't have an account? <Link to='/register'>Register</Link> </p> */}
+                        {/* <p className='text-warning mt-3'>Don't have an account? <Link to='/register'>Register</Link> </p> */}
 
-            </Form>
+                    </Form>
+                </div>
+            </div>
+            <div className='mt-5'>
+                <h1 className='text-warning text-center'>Register Now</h1>
+                <img className='ms-5' style={{height: '500px'}} src="https://cdn.pixabay.com/photo/2017/05/15/13/56/sign-up-2314914_960_720.png" alt="" />
+            </div>
         </div>
     );
 };
