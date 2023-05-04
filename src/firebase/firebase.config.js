@@ -4,13 +4,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+// console.log("enviroment variable", import.meta.env.VITE_apiKey)
 const firebaseConfig = {
-  apiKey: "AIzaSyBwRBYRnpO5KuFXNvkbzVvT8y5pyP0Kc6U",
-  authDomain: "food-paradise-c194c.firebaseapp.com",
-  projectId: "food-paradise-c194c",
-  storageBucket: "food-paradise-c194c.appspot.com",
-  messagingSenderId: "773948644806",
-  appId: "1:773948644806:web:64da8357b9902949efa6c7"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
