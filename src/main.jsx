@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: ':id',
         element: <Foods></Foods>,
-        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`)
+        loader: ({ params }) => fetch(`https://food-paradise-server-gambit101.vercel.app/food/${params.id}`)
       },
     ]
   }

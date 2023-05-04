@@ -14,7 +14,7 @@ const Chef = () => {
     },[])
 
     useEffect(() => {
-        fetch('http://localhost:5000/food')
+        fetch('https://food-paradise-server-gambit101.vercel.app/food')
             .then(res => res.json())
             .then(data => setChefs(data))
             .catch(error => console.error(error))
